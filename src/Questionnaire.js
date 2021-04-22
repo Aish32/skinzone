@@ -32,15 +32,14 @@ const Questionnaire = () => {
 
   const findSkinType = () => {
     let result = modeArray(selectedOption);
-    let skinType = "";
+    var skinTypeTemp = "";
     if (result.length > 1) {
-      skinType = "combination";
+      skinTypeTemp = "combination";
     } else {
-      skinType = result[0];
+      skinTypeTemp = result[0];
     }
-    setSkinType(skinType);
+    setSkinType(skinTypeTemp);
     toggle();
-    console.log(skinType);
   };
 
   const modeArray = (array) => {
@@ -52,7 +51,7 @@ const Questionnaire = () => {
     for (var i = 0; i < array.length; i++) {
       var el = array[i];
 
-      if (modeMap[el] === null) modeMap[el] = 1;
+      if (modeMap[el] == null) modeMap[el] = 1;
       else modeMap[el]++;
 
       if (modeMap[el] > maxCount) {
@@ -138,27 +137,24 @@ const Questionnaire = () => {
               </button>
             </div>
           )}
-          {skinType.length > 0 && (
-            <Modal isOpen={modal} toggle={toggle} centered>
-              <ModalHeader toggle={toggle}>Skin Type Result</ModalHeader>
-              <ModalBody>
-                <h3>
-                  Your skin type is{" "}
-                  <span className="use-font">"{skinType}"</span>
-                </h3>
-              </ModalBody>
-              <ModalFooter>
-                <a
-                  href={`https://www.google.com/search?q=products+for+${skinType}+skin`}
-                  className="result-btn"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Find product for your skin type
-                </a>
-              </ModalFooter>
-            </Modal>
-          )}
+          <Modal isOpen={modal} toggle={toggle} centered>
+            <ModalHeader toggle={toggle}>Skin Type Result</ModalHeader>
+            <ModalBody>
+              <h3>
+                Your skin type is <span className="use-font">"{skinType}"</span>
+              </h3>
+            </ModalBody>
+            <ModalFooter>
+              <a
+                href={`https://www.google.com/search?q=products+for+${skinType}+skin`}
+                className="result-btn"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Find product for your skin type
+              </a>
+            </ModalFooter>
+          </Modal>
         </div>
       </div>
     </div>
