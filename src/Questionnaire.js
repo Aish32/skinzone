@@ -5,7 +5,7 @@ import {
   Modal,
   ModalBody,
   ModalHeader,
-  ModalFooter,
+  ModalFooter
 } from "reactstrap";
 import quizQuestions from "./questions";
 
@@ -44,7 +44,7 @@ const Questionnaire = () => {
   };
 
   const modeArray = (array) => {
-    if (array.length == 0) return null;
+    if (array.length === 0) return null;
     var modeMap = {},
       maxCount = 1,
       modes = [];
@@ -52,13 +52,13 @@ const Questionnaire = () => {
     for (var i = 0; i < array.length; i++) {
       var el = array[i];
 
-      if (modeMap[el] == null) modeMap[el] = 1;
+      if (modeMap[el] === null) modeMap[el] = 1;
       else modeMap[el]++;
 
       if (modeMap[el] > maxCount) {
         modes = [el];
         maxCount = modeMap[el];
-      } else if (modeMap[el] == maxCount) {
+      } else if (modeMap[el] === maxCount) {
         modes.push(el);
         maxCount = modeMap[el];
       }
