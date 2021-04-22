@@ -60,7 +60,7 @@ const Home = ({ data }) => {
               className="card-img"
             />
             <h3>NEWS FEED</h3>
-            <p>Know the recent news about cosmetics and beauty parlour</p>
+            <p>Know the recent news about cosmetics and beauty products</p>
             <a
               href="https://www.cosmeticsbusiness.com/category/cosmetic_news_weekly"
               className="btn btn-custom"
